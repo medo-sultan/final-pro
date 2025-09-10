@@ -1,0 +1,317 @@
+/* ========= Section ========= */
+.flash-deals-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 24px 0;
+}
+
+/* ========= Header ========= */
+.flash-deals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 16px 12px;
+}
+
+.flash-deals-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.ends-in {
+  color: #6b6b6b;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.flash-timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer-circles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timer-circles .pill {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-circles .sep {
+  font-weight: 800;
+  color: #111;
+}
+
+.v-sep {
+  width: 1px;
+  height: 24px;
+  background: #e6e6e6;
+}
+
+.see-all-link {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ========= Slider ========= */
+.flash-deals-slider {
+  position: relative;
+  padding: 0; /* الأسهم داخل المنطقة */
+  overflow: hidden; /* عشان ما يطلعوش برا */
+  display: flex;
+  align-items: center;
+}
+
+/* شبكة المنتجات: 5 أعمدة ديسكتوب */
+.flash-products-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0 16px; /* مسافة داخلية بسيطة */
+  width: 100%;
+}
+
+/* ========= Arrows (داخل الكرت ويتحول الأسود عند hover) ========= */
+.side-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 72px;
+  border: none;
+  background: #f1f1f1;
+  color: #111;
+  border-radius: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+.side-arrow.left {
+  left: 4px;
+} /* داخل الحافة */
+.side-arrow.right {
+  right: 4px;
+} /* داخل الحافة */
+
+.side-arrow.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* يتحول للأسود عند المرور على السلايدر أو أي كرت */
+.flash-deals-slider:hover .side-arrow,
+.flash-deals-slider:has(.flash-product-card:hover) .side-arrow {
+  background: #111;
+  color: #fff;
+}
+
+/* تكبير بسيط عند مرور الماوس على السهم نفسه */
+.side-arrow:hover:not(.disabled) {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* ========= Card ========= */
+.flash-product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.flash-product-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* الصورة + البادج + الأكشنات */
+.flash-product-media {
+  position: relative;
+  background: #fff;
+  padding: 18px 18px 10px;
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flash-product-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e53935;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* ========= Hover actions (smooooth) ========= */
+.hover-actions {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%) translateX(12px); /* تبقى منزاحة شوية */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  will-change: transform, opacity;
+}
+.flash-product-card:hover .hover-actions {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0); /* ترجع لمكانها */
+  pointer-events: auto;
+}
+
+/* تتابع خفيف في الظهور */
+.hover-actions li:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.hover-actions li:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.hover-actions li:nth-child(3) {
+  transition-delay: 0.08s;
+}
+.hover-actions li:nth-child(4) {
+  transition-delay: 0.11s;
+}
+
+.hover-actions li {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f3f3f3;
+  color: #111;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+}
+.hover-actions li:hover {
+  transform: scale(1.06);
+  background: #ededed;
+}
+
+/* ========= Info ========= */
+.flash-product-info {
+  padding: 10px 16px 16px;
+}
+
+.flash-product-title {
+  color: #222;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 6px 0 10px;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.flash-product-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.flash-price {
+  color: #111;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.flash-old-price {
+  color: #9a9a9a;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+/* نجوم سوداء */
+.stars {
+  color: #111;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 1200px) {
+  .flash-products-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .flash-deals-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .flash-products-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .side-arrow {
+    height: 56px;
+  }
+  .side-arrow.left {
+    left: 2px;
+  }
+  .side-arrow.right {
+    right: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flash-products-list {
+    grid-template-columns: 1fr;
+  }
+  .flash-product-media img {
+    height: 200px;
+  }
+}

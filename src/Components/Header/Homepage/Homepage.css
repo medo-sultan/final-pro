@@ -1,0 +1,127 @@
+/* src/styles/Homepage.css */
+
+/* الأب المرجعي لو بدون Portal */
+.homepages-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+/* الحالة الافتراضية (مخفية لكن قابلة للأنيميشن) */
+.homepages-dropdown {
+  position: absolute;
+  /* تموضع منطقي تحت الزر */
+  top: calc(100% + 12px);
+  left: 420%;
+  transform: translate(-50%, -8px);
+
+  width: 85vw;
+  max-width: 1200px;
+  background: #ffffff;
+  border-top: 3px solid #a7a4a4;
+  box-shadow: 0 6px 36px rgba(100, 100, 100, 0.08);
+  padding: 32px 0 36px;
+  z-index: 1000;
+  border-radius: 10px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  will-change: opacity, transform;
+
+  /* اجعل النص افتراضيًا داكنًا داخل المنسدلة */
+  color: #111;
+}
+
+/* عند الفتح */
+.homepages-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+/* شبكة المحتوى */
+.homepages-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 32px 24px;
+  max-width: 1100px;
+  margin: auto;
+  width: 95%;
+}
+
+/* العناصر */
+.homepage-item {
+  display: flex; /* صورة فوق وعنوان تحت */
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit; /* يرث #111 من المنسدلة */
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.homepage-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+.homepage-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.homepage-title {
+  padding: 10px 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #111; /* تأكيد ظهور العنوان */
+  line-height: 1.35;
+  font-size: 1rem;
+}
+
+/* شاشات متوسطة */
+@media (max-width: 900px) {
+  .homepages-dropdown {
+    width: 95vw;
+    padding: 18px 0;
+    min-height: 340px;
+  }
+  .homepages-dropdown-grid {
+    gap: 18px 12px;
+    width: 95vw;
+  }
+  .homepage-title {
+    font-size: 1em;
+  }
+}
+
+/* شاشات صغيرة */
+@media (max-width: 600px) {
+  .homepages-dropdown {
+    width: 100vw;
+    left: 50%;
+    transform: translate(-50%, -8px);
+    min-height: 120px;
+    padding: 8px 0 15px;
+  }
+  .homepages-dropdown.show {
+    transform: translate(-50%, 0);
+  }
+  .homepages-dropdown-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 6px;
+    width: 100vw;
+    max-width: 98vw;
+  }
+  .homepage-item {
+    padding: 0;
+  }
+  .homepage-title {
+    font-size: 0.95em;
+  }
+}

@@ -1,0 +1,74 @@
+.coupon-bar {
+  margin: 40px auto 0 auto;
+  width: 96%;
+  max-width: 98vw;
+  min-height: 70px;
+  background: linear-gradient(90deg, #fff, #f9f9f9);
+  border: 2px solid#8c76768a; /* شكل مميز للكوبون */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #222;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coupon-bar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.coupon-bar span {
+  width: 100%;
+  line-height: 1.6;
+}
+
+.coupon-bar strong {
+  font-weight: 700;
+  color: #191919;
+}
+
+.coupon-code {
+  color: #e53935;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.45rem;
+  letter-spacing: 1px;
+  margin: 0 6px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.coupon-code:hover {
+  color: #c62828;
+}
+
+/* 🎯 تنسيقات الهاتف */
+@media (max-width: 768px) {
+  .coupon-bar {
+    flex-direction: column;
+    min-height: auto;
+    padding: 12px;
+    font-size: 1rem; /* خط أصغر */
+  }
+
+  .coupon-bar span {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .coupon-code {
+    font-size: 1.2rem;
+    margin: 4px 0;
+  }
+}

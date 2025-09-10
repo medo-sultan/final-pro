@@ -1,0 +1,108 @@
+.recent-dropdown-menu {
+  position: absolute;
+  top: 165%;
+  right: -900px;
+  transform: translateX(-50%);
+  width: 96vw; /* تقريبًا ملء الشاشة */
+  max-width: 1400px; /* للشاشات الكبيرة */
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  z-index: 9999;
+  animation: fadeSlideIn 0.25s ease;
+  cursor: pointer;
+}
+
+.recent-dropdown-list {
+  display: flex;
+  flex-wrap: wrap; /* عشان تكون متجاوبة وتنزل العناصر تحت */
+  gap: 20px;
+  justify-content: center;
+}
+
+.recent-dropdown-item {
+  flex: 1 1 200px; /* يكبر ويصغر حسب المساحة */
+  max-width: 230px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.recent-dropdown-item:hover {
+  box-shadow: 0 6px 18px rgba(209, 42, 42, 0.15);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.recent-dropdown-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1; /* مربع تلقائي */
+  background: #f8f8f8;
+  border-radius: 12px; /* انحناء بسيط */
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.recent-dropdown-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* يملأ المساحة */
+  border-radius: 12px;
+}
+
+.recent-dropdown-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 10px;
+  font-size: 0.8em;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #ba0404;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.recent-dropdown-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  text-align: center;
+
+  /* لمنع التداخل في الوصف */
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* يسمح بتغليف النص بدلاً من nowrap */
+  max-width: 90%;
+  cursor: pointer;
+}
+.recent-dropdown-arrow {
+  cursor: pointer;
+}
+.recent-dropdown-price {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #d12a2a;
+}
+
+@media (max-width: 900px) {
+  .recent-dropdown-item {
+    flex: 1 1 160px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .recent-dropdown-item {
+    flex: 1 1 140px;
+    max-width: 150px;
+  }
+}

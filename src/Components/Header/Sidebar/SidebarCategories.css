@@ -1,0 +1,187 @@
+/* ============ OVERLAY ============ */
+.sc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.4);
+  backdrop-filter: blur(1.5px) grayscale(0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.33, 1, 0.68, 1),
+    visibility 0.2s linear;
+  z-index: 9999;
+}
+.sc-overlay.sc-show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ============ SIDEBAR DRAWER ============ */
+.sc-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 340px;
+  max-width: 92vw;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14), 2px 0 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", Arial, sans-serif;
+  z-index: 10000;
+  transform: translate3d(-100%, 0, 0); /* هادي وأنظف */
+  opacity: 0.98;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s cubic-bezier(0.33, 1, 0.68, 1),
+    box-shadow 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform, opacity;
+}
+/* لو عايز bounce بدل الانتقال الهادئ، بدّل translate3d بالسطر ده:
+   transform: translate3d(-105%, 0, 0) scaleX(0.96); */
+.sc-drawer.sc-open {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.19), 2px 0 18px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 500px) {
+  .sc-drawer {
+    width: 92vw;
+  }
+}
+
+/* ============ HEADER ============ */
+.sc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  height: 60px;
+  background: #111827; /* رمادي داكن أنعم */
+  color: #fff;
+  border-bottom: 1px solid #0b1220;
+}
+.sc-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+}
+.sc-header-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: #1f2937;
+  border-radius: 8px;
+}
+.sc-close {
+  margin-inline-start: auto;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.9;
+  transition: opacity 0.15s,
+    transform 0.16s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  will-change: transform;
+}
+.sc-close:hover {
+  opacity: 1;
+  transform: scale(1.06) rotate(6deg);
+}
+
+/* ============ LIST ============ */
+.sc-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 8px 12px;
+  flex: 1;
+  overflow-y: auto;
+  background: #fff;
+}
+
+/* عنصر القائمة يحوي Link/btn بداخله */
+.sc-item {
+  margin: 4px 4px;
+}
+
+/* ============ LINK / BUTTON ============ */
+.sc-link,
+.sc-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.05s ease;
+}
+.sc-link:hover,
+.sc-btn:hover {
+  background: #f9fafb;
+}
+.sc-link:active,
+.sc-btn:active {
+  transform: translateY(1px);
+}
+.sc-link:focus-visible,
+.sc-btn:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+/* ============ ICON ============ */
+.sc-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f4f5f7; /* فاتح وهادي */
+  color: #6b7280; /* رمادي هادي */
+  flex: none;
+}
+.sc-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============ NAME & ARROW ============ */
+.sc-name {
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 600;
+}
+.sc-arrow {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  opacity: 0.55;
+}
+
+/* ============ BODY NO SCROLL ============ */
+.sc-noscroll {
+  overflow: hidden !important;
+}
+
+/* (اختياري) تحسين السكرول كروم/إيدج */
+.sc-list::-webkit-scrollbar {
+  width: 10px;
+}
+.sc-list::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 8px;
+}
+.sc-list::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}

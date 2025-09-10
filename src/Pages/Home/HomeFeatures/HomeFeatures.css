@@ -1,0 +1,161 @@
+/* ====== أساسيات ومحسّنات عامة ====== */
+.home-features {
+  --surface: #fff;
+  --surface-2: #fafafa;
+  --text: #222;
+  --muted: #666;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.1);
+
+  width: 100%;
+  background: linear-gradient(90deg, #ffffff, var(--surface-2));
+  /* Grid ذكي بدل flex-wrap: يوزّع تلقائيًا */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  padding: 40px 20px;
+  border-block: 1px solid #eee;
+}
+
+/* كارت */
+.feature {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  align-items: center;
+  background: var(--surface);
+  padding: 16px 18px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  border: 1px solid #f3f3f3;
+}
+.feature:hover,
+.feature:focus-within {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* أيقونة */
+.feature-icon {
+  inline-size: 64px;
+  block-size: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f1f1f1;
+  transition: background 0.25s ease;
+}
+.feature-icon > svg,
+.feature-icon > img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ألوان لطيفة لكل عنصر */
+.feature:nth-child(1) .feature-icon {
+  background: #e3f2fd;
+}
+.feature:nth-child(2) .feature-icon {
+  background: #e8f5e9;
+}
+.feature:nth-child(3) .feature-icon {
+  background: #fff3e0;
+}
+.feature:nth-child(4) .feature-icon {
+  background: #fce4ec;
+}
+
+/* نصوص */
+.feature-title {
+  font-weight: 800;
+  color: var(--text);
+  font-size: clamp(1rem, 0.9rem + 0.25vw, 1.08rem);
+  letter-spacing: -0.01em;
+}
+.feature-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ====== تابلت (≤ 1024px) ====== */
+@media (max-width: 1024px) {
+  .home-features {
+    padding: 32px 16px;
+    gap: 20px;
+    /* نضمن عمودين ثابتين شكلهم حلو */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .feature {
+    grid-template-columns: 60px 1fr;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .feature-icon {
+    inline-size: 60px;
+    block-size: 60px;
+  }
+  .feature-title {
+    font-size: 1.02rem;
+  }
+  .feature-sub {
+    font-size: 0.92rem;
+  }
+}
+
+/* ====== موبايل (≤ 768px) ====== */
+@media (max-width: 768px) {
+  .home-features {
+    /* عمود واحد نظيف مع هواء حول المحتوى */
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px clamp(12px, 4vw, 20px)
+      max(20px, 20px + env(safe-area-inset-bottom));
+  }
+  .feature {
+    grid-template-columns: 56px 1fr;
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+  .feature-icon {
+    inline-size: 56px;
+    block-size: 56px;
+  }
+  .feature-title {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .feature-sub {
+    font-size: 0.9rem;
+  }
+}
+
+/* ====== موبايل صغير جدًا (≤ 420px) ====== */
+@media (max-width: 420px) {
+  .feature {
+    grid-template-columns: 52px 1fr;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .feature-icon {
+    inline-size: 52px;
+    block-size: 52px;
+  }
+  .feature-title {
+    font-size: 0.98rem;
+  }
+  .feature-sub {
+    font-size: 0.88rem;
+  }
+}
+
+/* احترام تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  .feature,
+  .feature-icon {
+    transition: none !important;
+  }
+}

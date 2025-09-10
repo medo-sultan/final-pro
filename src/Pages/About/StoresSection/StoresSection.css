@@ -1,0 +1,102 @@
+.stores-section {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 40px 16px 0 16px;
+  font-family: "Poppins", Arial, sans-serif;
+  background: #fff;
+  text-align: center;
+}
+.stores-title {
+  font-size: 2.45rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 0.01em;
+  color: #111;
+}
+.stores-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.store-card {
+  background: #fff;
+  border-radius: 14px;
+
+  max-width: 410px;
+  min-width: 310px;
+  padding-bottom: 22px;
+  margin-bottom: 30px;
+  outline: none;
+}
+.store-image-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.store-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+  transition: filter 0.18s, transform 0.18s;
+}
+.store-image:hover,
+.store-image:focus {
+  filter: brightness(0.93) saturate(1.08);
+  transform: scale(1.05);
+}
+.store-info {
+  margin-top: 20px;
+}
+.store-city {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+.store-address,
+.store-country {
+  font-size: 1.02rem;
+  color: #444;
+}
+
+@media (max-width: 950px) {
+  .stores-list {
+    gap: 26px;
+  }
+  .store-card {
+    min-width: 225px;
+    padding-bottom: 12px;
+  }
+  .store-image-wrapper {
+    height: 180px;
+  }
+  .store-city {
+    font-size: 1.14rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .stores-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  .stores-list {
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+  }
+  .store-card {
+    min-width: 160px;
+    max-width: 95vw;
+  }
+  .store-image-wrapper {
+    height: 120px;
+  }
+}

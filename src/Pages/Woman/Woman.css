@@ -1,0 +1,146 @@
+/* Layout helpers */
+:root {
+  --container: min(1120px, 92vw);
+  --radius: 16px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --accent: #111; /* بدّلها لو عندك متغيرات ثيم */
+}
+
+.woman-page {
+  display: block;
+  color: #111;
+  background: #fff;
+}
+
+/* ---------------- HERO ---------------- */
+.woman-hero {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(72px, 12vw, 120px) 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)),
+    url("https://img.freepik.com/free-photo/elevated-view-scallop-starfish-sunglasses-hat-palm-leaves-coral-background_23-2148102223.jpg?t=st=1756243937~exp=1756247537~hmac=98b24a9f8e872892913a993f39b71d5ad2dae38677bcec18dec63609eb3acef5&w=1480")
+      center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.woman-hero .container {
+  width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.woman-title {
+  font-size: clamp(28px, 4.4vw, 54px);
+  line-height: 1.05;
+  margin: 0 0 10px;
+  letter-spacing: 0.4px;
+  font-weight: 800;
+}
+
+.woman-subtitle {
+  font-size: clamp(14px, 2vw, 18px);
+  opacity: 0.9;
+  margin: 0 0 22px;
+}
+
+/* CTA */
+.shop-btn {
+  display: inline-block;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  will-change: transform;
+}
+.shop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.shop-btn--primary {
+  border-color: #fff;
+  background: #fff;
+  color: #111;
+}
+
+/* ---------------- SECTIONS ---------------- */
+.woman-section {
+  padding: clamp(36px, 7vw, 72px) 0;
+}
+
+.section-content {
+  width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(18px, 4vw, 42px);
+  align-items: center;
+}
+
+.section-text h2 {
+  font-size: clamp(22px, 3.2vw, 34px);
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+.section-text p {
+  color: #444;
+  line-height: 1.65;
+  margin: 0 0 18px;
+  font-size: clamp(14px, 1.6vw, 16px);
+}
+
+/* Image block */
+.section-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.section-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+.section-media:hover img {
+  transform: scale(1.06);
+}
+
+/* Reverse every even row */
+.woman-section.reverse .section-text {
+  order: 2;
+}
+.woman-section.reverse .section-media {
+  order: 1;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .section-content {
+    grid-template-columns: 1fr;
+  }
+  .woman-section.reverse .section-text,
+  .woman-section.reverse .section-media {
+    order: initial;
+  }
+  .section-media img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-btn,
+  .section-media img {
+    transition: none;
+  }
+}

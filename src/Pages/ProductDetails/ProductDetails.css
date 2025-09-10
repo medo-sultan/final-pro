@@ -1,0 +1,351 @@
+.pd-container {
+  padding: 20px;
+}
+
+/* رجوع */
+.pd-back {
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+}
+
+/* الشبكة الرئيسية: جاليري يسار + معلومات يمين */
+.pd-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+}
+
+/* ====== الجاليري ====== */
+.pd-gallery {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  min-height: 520px;
+}
+
+.pd-thumbs {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.pd-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.pd-thumb:hover {
+  transform: translateY(-1px);
+}
+.pd-thumb.is-active {
+  border-color: #111;
+}
+
+.pd-main {
+  position: relative;
+  border: 1px solid #f2f2f2;
+  border-radius: 12px;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+/* القاعدة الأساسية */
+.pd-gallery {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+  min-height: 520px;
+}
+
+/* عند وجود ثمبنيلز */
+.pd-gallery.has-thumbs {
+  grid-template-columns: 96px 1fr;
+}
+
+/* لو مافيش ثمبنيلز */
+.pd-gallery.no-thumbs {
+  grid-template-columns: 1fr;
+}
+.pd-main {
+  position: relative;
+  border: 1px solid #f2f2f2;
+  border-radius: 12px;
+  min-height: clamp(360px, 60vh, 720px);
+  display: grid;
+  place-items: center;
+  background: #fff;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.pd-img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  display: block;
+}
+
+.pd-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  display: block;
+}
+
+.pd-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e53935;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.pd-zoom-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* ====== المعلومات ====== */
+.pd-info h1.pd-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.pd-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+  margin-bottom: 12px;
+}
+.pd-rating .stars {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.pd-rating a {
+  color: #666;
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.pd-bullets {
+  margin: 12px 0 16px;
+  display: grid;
+  gap: 6px;
+  color: #111;
+}
+.pd-bullets li {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* السعر */
+.pd-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 10px 0 6px;
+}
+.pd-price-now {
+  font-weight: 800;
+  font-size: 28px;
+  color: #111;
+}
+.pd-price-old {
+  color: #9a9a9a;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+.pd-save {
+  color: #e53935;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.pd-stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #eaf7ef;
+  color: #1a7f37;
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin: 8px 0 14px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* العدّاد */
+.pd-timer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 16px;
+}
+.pd-timer .box {
+  min-width: 48px;
+  height: 40px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+/* الكمية + الأزرار */
+.pd-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.pd-qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pd-qty button {
+  width: 38px;
+  height: 40px;
+  border: 0;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.pd-qty span {
+  width: 44px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pd-btn {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 800;
+}
+.pd-btn.primary {
+  background: #111;
+  color: #fff;
+}
+.pd-btn.buy {
+  background: #e53935;
+  color: #fff;
+}
+
+.pd-subactions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #bdbdbd;
+  font-size: 14px;
+  margin: 8px 0 14px;
+}
+.pd-subactions .icon {
+  opacity: 0.5;
+}
+
+/* عرض خاص */
+.pd-offer {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 12px 0 10px;
+  background: #fff;
+}
+.pd-offer h4 {
+  margin: 0 0 8px;
+}
+.pd-offer li {
+  list-style: none;
+  font-size: 14px;
+  color: #111;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ميتا */
+.pd-meta {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+.pd-meta .cats {
+  color: #666;
+}
+.pd-share {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* ريسبونسب */
+@media (max-width: 900px) {
+  .pd-content {
+    grid-template-columns: 1fr;
+  }
+  .pd-gallery {
+    grid-template-columns: 80px 1fr;
+  }
+}
+/* زر شكله رابط */
+.pd-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #666;
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+}

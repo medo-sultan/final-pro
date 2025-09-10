@@ -1,0 +1,181 @@
+/* ====== Wishlist Page Container ====== */
+.wl-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f9f9f9;
+  min-height: 70vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ====== Header Section ====== */
+.wl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wl-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.wl-clear {
+  padding: 8px 16px;
+  background-color: #ffefef;
+  color: #e63946;
+  font-weight: 500;
+  border: 1px solid #ffc1c1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wl-clear:hover {
+  background-color: #ffdbdb;
+}
+
+/* ====== Empty Wishlist ====== */
+.muted {
+  font-size: 16px;
+  color: #777;
+  margin-top: 8px;
+}
+
+/* ====== Wishlist List ====== */
+.wl-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+/* ====== Wishlist Items ====== */
+.wl-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.wl-item:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== Product Thumbnail ====== */
+.wl-thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+/* ====== Product Info Section ====== */
+.wl-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wl-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.wl-title:hover {
+  color: #e63946;
+}
+
+/* ====== Meta Info ====== */
+.wl-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+.brand {
+  color: #222;
+  font-weight: 500;
+}
+
+.sku {
+  color: #999;
+}
+
+/* ====== Price ====== */
+.wl-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* ====== Action Buttons ====== */
+.wl-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #f2f2f2;
+  border-color: #ccc;
+}
+
+.btn.danger {
+  background-color: #ffe9e9;
+  border-color: #ffbcbc;
+  color: #e63946;
+}
+
+.btn.danger:hover {
+  background-color: #ffdede;
+}
+
+/* ====== Heart Button Styling ====== */
+.wishlist-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.wishlist-btn:hover {
+  color: #e63946;
+}
+
+.wishlist-btn.is-liked {
+  color: #e63946;
+}

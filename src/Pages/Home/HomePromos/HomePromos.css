@@ -1,0 +1,140 @@
+body {
+  overflow-x: hidden;
+}
+.home-promos {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr; /* الأوسط أوسع */
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.promo-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden; /* عشان أي تكبير للصورة ما يطلع برا */
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* تأثير عند المرور بالماوس
+.promo-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+} */
+
+/* الصورة */
+.promo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* تكبير الصورة عند المرور */
+.promo-card:hover .promo-img {
+  transform: scale(1.08);
+}
+
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  transition: background 0.3s ease;
+}
+
+.promo-overlay.light {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.promo-overlay.pink-overlay {
+  background: rgba(173, 24, 98, 0.25);
+}
+
+/* النص العادي للكروت (تحت) */
+.promo-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  line-height: 1.4;
+  margin-left: 20%;
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* النص في الكرت الأوسط (فوق) */
+.promo-center-text {
+  top: 20px;
+  bottom: auto;
+  text-align: center;
+}
+
+/* تحسين العنوان الفرعي */
+.promo-subtitle {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #47557d;
+  margin-bottom: 4px;
+}
+
+/* العنوان الرئيسي */
+.promo-title {
+  font-size: 34px;
+  font-weight: 900;
+  margin: 8px 0;
+  line-height: 1.2;
+  color: #d77f7f;
+}
+
+/* رابط الشراء */
+.promo-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 17px;
+  text-decoration: none;
+  color: #c29d61;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 3px;
+  text-align: center;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.promo-link:hover {
+  color: #a6793a;
+  border-color: #a6793a;
+}
+
+/* السهم */
+.arrow {
+  font-size: 20px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.promo-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* نص أبيض */
+.white {
+  color: white;
+}
+
+/* للموبايل */
+@media (max-width: 768px) {
+  .home-promos {
+    grid-template-columns: 1fr;
+  }
+  .promo-card {
+    height: 200px;
+  }
+  .promo-text.left {
+    left: 15px;
+  }
+}

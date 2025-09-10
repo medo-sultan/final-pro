@@ -1,0 +1,65 @@
+.innovation-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px 0 20px;
+  text-align: center;
+  background: #fff;
+  color: #111;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.innovation-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 65px;
+  letter-spacing: 0.01em;
+  line-height: 1.18;
+}
+.innovation-features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.innovation-feature {
+  text-align: center;
+  min-width: 220px;
+  max-width: 300px;
+}
+.innovation-feature-title {
+  font-size: 1.39rem;
+  font-weight: 500;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: #111;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.innovation-feature-desc {
+  font-size: 1.1rem;
+  color: #787878;
+  margin-bottom: 3px;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .innovation-title {
+    font-size: 2.1rem;
+    margin-bottom: 38px;
+  }
+  .innovation-features {
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  .innovation-feature {
+    min-width: 140px;
+    max-width: 100%;
+  }
+  .innovation-feature-title {
+    font-size: 1.08rem;
+  }
+  .innovation-feature-desc {
+    font-size: 0.9rem;
+  }
+}

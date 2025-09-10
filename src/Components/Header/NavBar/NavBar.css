@@ -1,0 +1,77 @@
+/* ====== Main Navigation ====== */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* يخلي زر التصنيفات على اليسار والـ Recently على اليمين */
+  padding: 12px 4vw;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  z-index: 100;
+  color: #111;
+  font-weight: bold;
+}
+
+/* خلي اللينكات تتوسّط تلقائياً */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0 auto; /* يوسّط القائمة في النص */
+  padding: 0;
+  position: relative;
+}
+
+/* زر Recently يكون دايمًا في أقصى يمين */
+.nav-links .push-end {
+  margin-left: auto;
+}
+
+/* زر التصنيفات يفضل كما هو */
+.categories-btn {
+  cursor: pointer;
+  font-size: 1.05rem;
+  background: #f8f8f8;
+  border-radius: 7px;
+  padding: 9px 18px;
+  transition: background 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #eee;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.dropdown-link,
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-link:hover,
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* تحسين بسيط للموبايل */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .main-nav {
+    gap: 16px;
+  }
+  .nav-links {
+    display: none; /* لو عندك مينو جانبية للموبايل */
+  }
+}

@@ -1,0 +1,40 @@
+.products-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* ينزل تحت الزرار */
+  left: 50%; /* النص */
+  transform: translateX(-50%); /* يتحرك عشان يبقى في النص تمام */
+  min-width: 240px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #eee;
+  z-index: 1000;
+  padding: 18px 0;
+  border-radius: 8px;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+.products-dropdown.show {
+  display: block;
+}
+
+.products-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.products-dropdown li a {
+  text-decoration: none;
+  color: #222;
+  font-size: 1.05em;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.products-dropdown li a:hover {
+  color: #e13d3d;
+}

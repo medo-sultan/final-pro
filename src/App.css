@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ProductDetails.css */
+html,
+body {
+  overscroll-behavior: start;
+}
+.pd-container {
+  overflow-anchor: none;
+}
+/* الزر */
+.btt {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  z-index: 60;
+}
+.btt:hover {
+  background: #000;
+}
+.btt:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+.btt--show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.btt__svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* دائرة التقدّم */
+.btt__ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 3;
+}
+.btt__ring {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.15s linear;
+  opacity: 0.9;
+}
+
+/* السهم */
+.btt__arrow {
+  fill: #fff;
+}
+
+/* لو المستخدم مفضّل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  .btt,
+  .btt--show {
+    transition: none;
+  }
+  .btt__ring {
+    transition: none;
+  }
+}

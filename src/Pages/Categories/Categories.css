@@ -1,0 +1,485 @@
+/* ===== Categories.css (refined) ===== */
+/* Container & Header */
+.cs-container {
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.cs-header {
+  padding: 30px 3vw 0 3vw;
+}
+.cs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 16px;
+}
+.cs-breadcrumb-arrow {
+  color: #bbb;
+}
+.cs-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 22px 0;
+  letter-spacing: 0.2px;
+}
+.cs-categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 14px 0;
+}
+.cs-category-btn {
+  background: #f5f7fb;
+  color: #222;
+  border: 1px solid #edf0f5;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cs-category-btn:hover {
+  background: #eef2f7;
+  border-color: #e5e9f0;
+  transform: translateY(-1px);
+}
+
+/* Layout */
+.cs-main {
+  display: flex;
+  gap: 34px;
+  padding: 18px 3vw 46px 3vw;
+  align-items: flex-start;
+}
+.cs-sidebar {
+  flex: 0 0 240px;
+  position: sticky;
+  top: 12px;
+  height: max-content;
+}
+.cs-results {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar card */
+.cs-sidecard {
+  background: #fff;
+  border: 1px solid #eceff4;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 2px 14px rgba(24, 36, 66, 0.05);
+}
+.cs-sidecard-title {
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.cs-side-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cs-side-link {
+  width: 100%;
+  text-align: left;
+  background: #f7f8fb;
+  border: 1px solid #edf0f5;
+  border-radius: 9px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.15s;
+}
+.cs-side-link:hover {
+  background: #eef2f7;
+  border-color: #e5e9f0;
+}
+
+/* Top bar */
+.cs-results-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  font-size: 1.03rem;
+}
+.cs-sale-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+.cs-view-opts button,
+.cs-view-opts select {
+  margin-left: 8px;
+  background: #f5f7fb;
+  border: 1px solid #edf0f5;
+  border-radius: 9px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cs-view-opts select {
+  padding: 6px 10px;
+}
+.cs-grid-btn,
+.cs-list-btn {
+  font-size: 1.2rem;
+  padding: 4px 12px;
+}
+.cs-view-opts .is-active,
+.cs-pagination .is-active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* Product list */
+.cs-product-list {
+  display: grid;
+  gap: 0;
+}
+.cs-product-list.is-list {
+  grid-template-columns: 1fr;
+}
+.cs-product-list.is-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* List view card */
+.cs-product-list.is-list .cs-product-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 26px 22px;
+  min-height: 220px;
+  background: #fff;
+  border: 1px solid #eceff4;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(24, 36, 66, 0.05);
+  transition: box-shadow 0.16s, border-color 0.16s;
+  margin-bottom: 18px;
+}
+.cs-product-list.is-list .cs-product-card:hover {
+  box-shadow: 0 6px 24px rgba(24, 36, 66, 0.1);
+  border-color: #e4e9f1;
+}
+.cs-product-list.is-list .cs-product-discount {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  background: #e11;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(225, 17, 17, 0.13);
+  z-index: 2;
+  letter-spacing: 0.3px;
+}
+.cs-product-list.is-list .cs-product-image {
+  width: 210px;
+  height: 320px;
+  object-fit: cover;
+  background: #f6f7f9;
+  border-radius: 10px;
+  display: block;
+}
+.cs-product-list.is-list .cs-product-info {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 6px;
+}
+.cs-product-list.is-list .cs-product-title {
+  font-size: 1.16rem;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 4px 0;
+  line-height: 1.34;
+}
+.cs-product-list.is-list .cs-product-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-product-list.is-list .cs-product-price {
+  color: #111;
+  font-size: 1.36rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.cs-product-list.is-list .cs-product-oldprice {
+  color: #b0b0b0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+.cs-product-list.is-list .cs-product-info__divider {
+  border-top: 1px solid #edf0f5;
+  margin: 10px 0 10px;
+  width: 100%;
+}
+.cs-product-list.is-list .cs-product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+.cs-product-list.is-list .cs-product-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #23ce6b;
+  margin-bottom: 6px;
+}
+.cs-product-list.is-list .cs-product-check {
+  color: #23ce6b;
+}
+.cs-product-list.is-list .cs-product-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 280px;
+  width: 280px;
+  gap: 14px;
+}
+.cs-product-list.is-list .cs-product-btn {
+  width: 100%;
+  height: 50px;
+  background: #f5f7fb;
+  border: 1px solid #edf0f5;
+  color: #111;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cs-product-list.is-list .cs-product-btn:hover {
+  background: #eef2f7;
+  border-color: #e5e9f0;
+}
+.cs-product-list.is-list .cs-product-bottom {
+  display: flex;
+  gap: 28px;
+  color: #888;
+  font-size: 1.02rem;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.cs-product-list.is-list .as-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Grid view card */
+.cs-product-list.is-grid .cs-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 18px;
+  min-height: 340px;
+  background: #fff;
+  border: 1px solid #eceff4;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(24, 36, 66, 0.05);
+  transition: box-shadow 0.16s, border-color 0.16s;
+  position: relative;
+  overflow: hidden;
+}
+.cs-product-list.is-grid .cs-product-card:hover {
+  box-shadow: 0 6px 24px rgba(24, 36, 66, 0.1);
+  border-color: #e4e9f1;
+}
+.cs-product-list.is-grid .cs-product-discount {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  background: #e11;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(225, 17, 17, 0.13);
+}
+.cs-product-list.is-grid .cs-product-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background: #f6f7f9;
+  border-radius: 10px;
+  margin: 18px 0 16px;
+  display: block;
+}
+.cs-product-list.is-grid .cs-product-title {
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #232323;
+  min-height: 2.4em;
+  max-height: 3.2em;
+  overflow: hidden;
+}
+.cs-product-list.is-grid .cs-product-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-product-list.is-grid .cs-product-price {
+  color: #111;
+  font-size: 1.22rem;
+  font-weight: 800;
+}
+.cs-product-list.is-grid .cs-product-oldprice {
+  color: #b0b0b0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+.cs-product-list.is-grid .cs-product-features,
+.cs-product-list.is-grid .cs-product-actions,
+.cs-product-list.is-grid .cs-product-bottom {
+  display: none !important;
+}
+
+/* Pagination */
+.cs-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+.cs-page-btn {
+  background: #f5f7fb;
+  border: 1px solid #edf0f5;
+  color: #222;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-width: 40px;
+}
+.cs-page-btn:hover:not(:disabled) {
+  background: #eef2f7;
+  border-color: #e5e9f0;
+  transform: translateY(-1px);
+}
+.cs-page-btn.is-active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.cs-page-btn:disabled {
+  background: #f0f0f0;
+  color: #999;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+.cs-prev,
+.cs-next {
+  font-weight: 700;
+  padding: 8px 16px;
+}
+.cs-page-ellipsis {
+  padding: 0 4px;
+  color: #999;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .cs-product-list.is-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cs-product-list.is-list .cs-product-actions,
+  .cs-product-list.is-list .cs-product-btn {
+    min-width: 210px;
+    width: 210px;
+  }
+}
+@media (max-width: 1000px) {
+  .cs-product-list.is-list .cs-product-card {
+    gap: 12px;
+    padding: 18px 12px;
+  }
+  .cs-product-list.is-list .cs-product-image {
+    width: 140px;
+    height: 100px;
+  }
+  .cs-sidebar {
+    flex-basis: 200px;
+  }
+}
+@media (max-width: 900px) {
+  .cs-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cs-sidebar {
+    position: static;
+    width: 100%;
+  }
+  .cs-product-image {
+    width: 140px;
+    height: 110px;
+    margin: 0;
+  }
+}
+@media (max-width: 700px) {
+  .cs-product-list.is-list .cs-product-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cs-product-list.is-list .cs-product-actions {
+    width: 100%;
+    min-width: 0;
+    align-items: stretch;
+  }
+  .cs-product-list.is-list .cs-product-btn {
+    width: 100%;
+  }
+  .cs-product-list.is-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .cs-product-list.is-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,107 @@
+.req {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+.req__card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+}
+.req__subtitle {
+  color: #555;
+  margin-top: 6px;
+}
+
+.req__error {
+  background: #fff3f3;
+  color: #b60000;
+  border: 1px solid #ffd1d1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 12px 0;
+}
+
+.req__form {
+  display: grid;
+  gap: 14px;
+}
+.req__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.req__form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+.req__form input[type="text"],
+.req__form input[type="tel"],
+.req__form input[type="email"],
+.req__form input[type="file"],
+.req__form textarea {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+}
+.req__form input:focus,
+.req__form textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+}
+
+.req__file input[type="file"] {
+  padding: 8px;
+}
+
+.req__preview {
+  margin-top: 8px;
+}
+.req__preview img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.req__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.req__btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.req__btn--ghost {
+  background: #fff;
+  color: #111;
+  border: 1px solid #111;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .req__row {
+    grid-template-columns: 1fr;
+  }
+}
+/* مثال */
+.app-content {
+  height: 100vh;
+  overflow-y: auto;
+}

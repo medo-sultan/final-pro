@@ -1,0 +1,51 @@
+// src/blogData.js
+export const BlogData = [
+  {
+    slug: "affordable-convertibles",
+    category: "AUTOPARTS",
+    author: "Myoui Mina",
+    title: "The Best Affordable Convertible Cars to Rent...",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta et nisi at sodales...",
+    img: "https://merto-be87.kxcdn.com/merto/wp-content/uploads/2024/03/blog-1.jpg",
+  },
+  {
+    slug: "apple-marketing-lessons",
+    category: "ELECTRONICS",
+    author: "Myoui Mina",
+    title: "10 Things to Learn from Apple's Marketing Strategy...",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta et nisi at sodales...",
+    img: "https://merto-be87.kxcdn.com/merto/wp-content/uploads/2024/03/blog-2.jpg",
+  },
+  {
+    slug: "weekday-outfit-inspo",
+    category: "BEAUTY & FASHION",
+    author: "Myoui Mina",
+    title: "Weekday Outfit Inspiration for All Occasions...",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta et nisi at sodales...",
+    img: "https://merto-be87.kxcdn.com/merto/wp-content/uploads/2024/03/blog-3.jpg",
+  },
+  {
+    slug: "summer-top-5",
+    category: "TRAVEL",
+    author: "Myoui Mina",
+    title: "Top 5 Destinations to Visit This Summer...",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta et nisi at sodales...",
+    img: "https://merto-be87.kxcdn.com/merto/wp-content/uploads/2024/03/blog-4.jpg",
+  },
+  {
+    slug: "home-cooked-beginners",
+    category: "FOOD",
+    author: "Myoui Mina",
+    title: "Delicious Home-cooked Meals for Beginners...",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta et nisi at sodales...",
+    img: "https://merto-be87.kxcdn.com/merto/wp-content/uploads/2024/03/blog-5-1.jpg",
+  },
+  {
+    slug: "delicious-home-car",
+    category: "CAR",
+    author: "Mina",
+    title: "Delicious Home ,to Visit This Summer...",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta et nisi at sodales...",
+    img: "https://merto-be87.kxcdn.com/merto/wp-content/uploads/2024/03/blog-6.jpg",
+  },
+];

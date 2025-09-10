@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #000;
+  --accent-color: #e11;
+  --bg-color: #fff;
+  --border-color: #eee;
+  --gray-light: #f5f5f5;
+  --gray: #ddd;
+  --font-main: Arial, sans-serif;
+}
+
+/* ====== Header Container (ارفع الز-index) ====== */
+.header {
+  font-family: var(--font-main);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-color);
+  position: relative;
+  z-index: 10000; /* أعلى من الهيرو */
+}
+
+/* ====== Mobile / Desktop ====== */
+.desktop-header {
+  display: block;
+}
+.mobile-header {
+  display: none;
+}
+@media (max-width: 900px) {
+  .desktop-header {
+    display: none !important;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid #ececec;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 11000;
+    box-shadow: 0 2px 8px rgba(24, 36, 66, 0.06);
+    min-height: 58px;
+    transition: box-shadow 0.18s;
+  }
+
+  .menu-btn,
+  .icon-btn {
+    background: none;
+    border: none;
+    font-size: 2.1rem;
+    cursor: pointer;
+    color: #222;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.16s, color 0.16s;
+  }
+  .menu-btn:active,
+  .icon-btn:active,
+  .menu-btn:hover,
+  .icon-btn:hover {
+    background: #f3f3f3;
+    color: var(--accent-color, #0d6efd);
+  }
+
+  .logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #222;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    font-family: "Poppins", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: color 0.18s;
+  }
+  .logo-accent {
+    color: var(--accent-color, #0d6efd);
+    font-weight: 900;
+    font-size: 1.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 8px;
+  }
+
+  .cart-icon {
+    font-size: 2.1rem;
+    color: #222;
+    position: relative;
+    transition: color 0.18s, transform 0.18s;
+  }
+  .cart-icon:hover,
+  .cart-icon:active {
+    color: var(--accent-color, #0d6efd);
+    transform: scale(1.11);
+  }
+
+  .cart-count {
+    position: absolute;
+
+    background: #e11;
+    color: #fff;
+    padding: 2px 7px;
+    font-size: 0.83rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(224, 17, 17, 0.08);
+    line-height: 1;
+    min-width: 22px;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+:root {
+  --topbar-h: 72px; /* هتتحدّث تلقائيًا من الكود */
+}
+
+/* TopBar ثابت */
+.topbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+/* ظل بسيط لما الصفحة تتحرّك */
+.header.is-scrolled .topbar-fixed {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* هنا السحر: نزقّ المحتوى (NavBar) لتحت قدّ ارتفاع التوب بار */
+.desktop-header {
+  padding-top: var(--topbar-h);
+}
+
+/* الوعاء بتاع النافبار */
+.navbar-wrapper {
+  position: relative;
+  z-index: 900;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  will-change: transform, opacity;
+  background: #fff;
+}
+
+/* اخفاء ناعم عند النزول */
+.navbar-wrapper.is-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
