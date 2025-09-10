@@ -1,12 +1,25 @@
-# React + Vite
+# Final Pro 🛍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce web application with **Frontend + Backend** integrated.  
+This project includes **React (Vite)** for the frontend and **Strapi** for the backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Responsive frontend built with React + Vite.
+- Powerful backend using Strapi.
+- Authentication & Login/Register system.
+- Organized folder structure for easy scalability.
+- Integrated APIs between frontend & backend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Installation & Setup
+
+### **Clone the repository**
+
+```bash
+git clone https://github.com/medo-sultan/final-pro.git
+cd final-pro
+```
